@@ -27,7 +27,7 @@ jQuery(document).ready(function($) {
                 adContainer.appendChild(script);
                 adContainer.appendChild(div);
 
-                var headerElements = document.getElementsByClassName('header-float');
+                var headerElements = document.getElementsByClassName('adsbanner1');
                 if (headerElements.length > 0) {
                     headerElements[0].appendChild(adContainer);
                 }
