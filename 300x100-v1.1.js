@@ -38,28 +38,3 @@ jQuery(document).ready(function($) {
     });
 });
 
-// Đóng quảng cáo và lưu thời gian vào localStorage
-function closeAds(element) {
-    var adContainer = element.closest('.xx-ads');
-    if (adContainer) {
-        adContainer.style.setProperty('display', 'none', 'important');
-        var currentTime = Date.now();
-        var tenMinutesLater = currentTime + 10 * 60 * 1000;
-        localStorage.setItem('adCacheTime', tenMinutesLater.toString());
-    }
-}
-
-// Kiểm tra localStorage để ẩn/hiện quảng cáo
-window.addEventListener('DOMContentLoaded', function() {
-    var adContainer = document.querySelector('.xx-ads');
-    var adCacheTime = localStorage.getItem('adCacheTime');
-    var currentTime = Date.now();
-
-    if (adContainer) {
-        if (adCacheTime && currentTime < parseInt(adCacheTime)) {
-            adContainer.style.setProperty('display', 'none', 'important');
-        } else {
-            adContainer.style.setProperty('display', 'block', 'important');
-        }
-    }
-});
