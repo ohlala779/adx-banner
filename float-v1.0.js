@@ -10,28 +10,27 @@ jQuery(document).ready(function($) {
             var ip = ipLine.split('=')[1];
             var country = countryLine.split('=')[1];
 
-            if (country.trim() === "VN") {
-                // Tạo mã quảng cáo
-                var adContainer = document.createElement('div');
-                adContainer.className = 'xx-ads';
+            // Tạo mã quảng cáo (KHÔNG kiểm tra quốc gia nữa)
+            var adContainer = document.createElement('div');
+            adContainer.className = 'xx-ads';
 
-                var script = document.createElement('script');
-                script.async = true;
-                script.setAttribute("data-cfasync", "false");
-                script.setAttribute("data-clbaid", "");
-                script.src = "//clammyendearedkeg.com/bn.js";
+            var script = document.createElement('script');
+            script.async = true;
+            script.setAttribute("data-cfasync", "false");
+            script.setAttribute("data-clbaid", "");
+            script.src = "//clammyendearedkeg.com/bn.js";
 
-                var div = document.createElement('div');
-                div.setAttribute("data-cl-spot", "2058133");
+            var div = document.createElement('div');
+            div.setAttribute("data-cl-spot", "2058133");
 
-                adContainer.appendChild(script);
-                adContainer.appendChild(div);
+            adContainer.appendChild(script);
+            adContainer.appendChild(div);
 
-                var headerElements = document.getElementsByClassName('header-float');
-                if (headerElements.length > 0) {
-                    headerElements[0].appendChild(adContainer);
-                }
+            var headerElements = document.getElementsByClassName('header-float');
+            if (headerElements.length > 0) {
+                headerElements[0].appendChild(adContainer);
             }
+
         } catch (e) {
             console.error('Lỗi khi xử lý Cloudflare Trace:', e);
         }
