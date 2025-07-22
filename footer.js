@@ -6,7 +6,7 @@ jQuery(document).ready(function($) {
 
             // Tạo mã quảng cáo
             var adContainer = document.createElement('div');
-            adContainer.className = 'adsbanner1';
+            adContainer.className = 'adsbanner3';
 
             var script = document.createElement('script');
             script.async = true;
