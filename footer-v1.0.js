@@ -20,7 +20,7 @@ jQuery(document).ready(function($) {
             adContainer.appendChild(script);
             adContainer.appendChild(div);
 
-            var headerElements = document.getElementsByClassName('adsbanner1');
+            var headerElements = document.getElementsByClassName('adsbanner3');
             if (headerElements.length > 0) {
                 headerElements[0].appendChild(adContainer);
             }
